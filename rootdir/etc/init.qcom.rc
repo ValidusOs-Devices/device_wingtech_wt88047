@@ -508,3 +508,7 @@ service qti_ims /system/bin/sh /init.qti.ims.sh
     group radio
     oneshot
 
+# SSR setting
+on property:persist.sys.ssr=*
+    exec /system/bin/sh /init.qcom.ssr.sh ${persist.sys.ssr}
+
